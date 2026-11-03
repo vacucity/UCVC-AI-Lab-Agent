@@ -83,8 +83,6 @@ Results will vary a little between runs; these are from my machine.
 │   └── eval/                 # Ch 8: two versions of each project's report for the win-rate cells
 │       ├── researchflow/     #   original_state.json, v2b_state_full.json
 │       └── scenicmind/       #   report_deep_dive_e1.md, report_deep_dive_derived.md, evidence_derived.json
-├── e1_bfcl.py                # same suite, so the gate can also run from the repo root
-├── test_agent_eval.py
 ├── .env.example
 └── README.md
 ```
@@ -180,7 +178,7 @@ The Ch 9 and Ch 10 notebooks only import the project code. They patch a database
    ```
 
    - On Windows, Jupyter's `sys.stderr` has no file handle, so stdio clients need `errlog=<an open file>`. The notebook shows the patch.
-4. **Chapter 8's CI gate:** run the first command from the repo root or from `Part3 Advanced application/`. Set `EVAL_TOOLS=poor` to watch the gate catch a bad change to the tool descriptions (in Windows cmd, run `set EVAL_TOOLS=poor` first).
+4. **Chapter 8's CI gate:** run the first command from `Part3 Advanced application/`. Set `EVAL_TOOLS=poor` to watch the gate catch a bad change to the tool descriptions (in Windows cmd, run `set EVAL_TOOLS=poor` first).
 
    ```bash
    pytest -q --tb=short test_agent_eval.py
