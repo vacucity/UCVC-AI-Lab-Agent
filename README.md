@@ -1,4 +1,6 @@
-# Hello-Agents, engineering edition
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/c01a339e-a07f-4212-9a5d-5d0947a30504" />
+
+# UCVC—AI—LabAgent
 
 **Building LLM agents with real engineering tools: LangChain, LangGraph, Postgres/pgvector, MCP and pytest.**
 
