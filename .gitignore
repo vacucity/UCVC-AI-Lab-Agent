@@ -1,0 +1,23 @@
+# Secrets: never upload API keys
+.env
+
+# Large or third-party source material (the Hello-Agents PDF is over GitHub's 100 MB limit)
+*.pdf
+
+# Not part of the public tutorial
+学习资料_Agent与项目面试/
+学习路线_HelloAgents.md
+Project/
+
+# Generated while running the notebooks
+*_runtime/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+NOTES.json
+
+# Python and Jupyter caches
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/

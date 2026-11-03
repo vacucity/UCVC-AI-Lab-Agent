@@ -1,0 +1,395 @@
+{
+  "workspace_id": "demo",
+  "papers": [
+    {
+      "id": "arxiv:2310.08560",
+      "title": "MemGPT: Towards LLMs as Operating Systems",
+      "authors": "Charles Packer, Sarah Wooders, Kevin Lin et al.",
+      "abstract": "Large language models (LLMs) have revolutionized AI, but are constrained by limited context windows, hindering their utility in tasks like extended conversations and document analysis. To enable using context beyond limited context windows, we propose virtual context management, a technique drawing inspiration from hierarchical memory systems in traditional operating systems that provide the appearance of large memory resources through data movement between fast and slow memory. Using this technique, we introduce MemGPT (Memory-GPT), a system that intelligently manages different memory tiers in order to effectively provide extended context within the LLM's limited context window, and utilizes interrupts to manage control flow between itself and the user. We evaluate our OS-inspired design in two domains where the limited context windows of modern LLMs severely handicaps their performance: document analysis, where MemGPT is able to analyze large documents that far exceed the underlying LLM's context window, and multi-session chat, where MemGPT can create conversational agents that remember, reflect, and evolve dynamically through long-term interactions with their users. We release MemGPT code and data for our experiments at https://memgpt.ai.",
+      "year": null,
+      "_parsed": true,
+      "_sections": []
+    },
+    {
+      "id": "arxiv:2210.03629",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": "Shunyu Yao, Jeffrey Zhao, Dian Yu et al.",
+      "abstract": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io",
+      "year": null,
+      "_parsed": true,
+      "_sections": []
+    },
+    {
+      "id": "arxiv:2302.04761",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "authors": "Timo Schick, Jane Dwivedi-Yu, Roberto Dessì et al.",
+      "abstract": "Language models (LMs) exhibit remarkable abilities to solve new tasks from few examples or instructions, especially at scale. They also struggle with basic functionality, such as arithmetic or factual lookup, where simpler models excel. We show LMs can teach themselves to use external tools via simple APIs. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to incorporate results into future token prediction.",
+      "year": 2023,
+      "_parsed": true,
+      "_sections": [
+        "Introduction",
+        "Related Work",
+        "Method",
+        "Experiments",
+        "Results",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "arxiv:2305.10601",
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "authors": "Shunyu Yao, Dian Yu, Jeffrey Zhao et al.",
+      "abstract": "Language models are increasingly being deployed for general problem solving across a wide range of tasks, but are still confined to token-level, left-to-right decision-making processes during inference. This means they can fall short in tasks that require exploration, strategic lookahead, or where initial decisions play a pivotal role. To surmount these challenges, we introduce a new framework for language model inference, Tree of Thoughts (ToT), which generalizes over the popular Chain of Thought approach to prompting language models, and enables exploration over coherent units of text (thoughts) that serve as intermediate steps toward problem solving. ToT allows LMs to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action, as well as looking ahead or backtracking when necessary to make global choices. Our experiments show that ToT significantly enhances language models' problem-solving abilities on three novel tasks requiring non-trivial planning or search: Game of 24, Creative Writing, and Mini Crosswords. For instance, in Game of 24, while GPT-4 with chain-of-thought prompting only solved 4% of tasks, our method achieved a success rate of 74%. Code repo with all prompts: https://github.com/princeton-nlp/tree-of-thought-llm.",
+      "year": null,
+      "_parsed": true,
+      "_sections": []
+    },
+    {
+      "id": "arxiv:2310.11511",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "authors": "Akari Asai, Zeqiu Wu, Yizhong Wang et al.",
+      "abstract": "Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate. Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issues. However, indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary, or passages are relevant, diminishes LM versatility or can lead to unhelpful response generation. We introduce a new framework called Self-Reflective Retrieval-Augmented Generation (Self-RAG) that enhances an LM's quality and factuality through retrieval and self-reflection. Our framework trains a single arbitrary LM that adaptively retrieves passages on-demand, and generates and reflects on retrieved passages and its own generations using special tokens, called reflection tokens. Generating reflection tokens makes the LM controllable during the inference phase, enabling it to tailor its behavior to diverse task requirements. Experiments show that Self-RAG (7B and 13B parameters) significantly outperforms state-of-the-art LLMs and retrieval-augmented models on a diverse set of tasks. Specifically, Self-RAG outperforms ChatGPT and retrieval-augmented Llama2-chat on Open-domain QA, reasoning and fact verification tasks, and it shows significant gains in improving factuality and citation accuracy for long-form generations relative to these models.",
+      "year": null,
+      "_parsed": true,
+      "_sections": []
+    },
+    {
+      "id": "arxiv:2303.11366",
+      "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "authors": "Noah Shinn, Federico Cassano, Edward Berman et al.",
+      "abstract": "Large language models are increasingly used as goal-driven agents interacting with external environments, but they struggle to learn efficiently from trial-and-error because traditional reinforcement learning requires extensive samples and expensive fine-tuning. We propose Reflexion, a framework that reinforces language agents through linguistic feedback instead of weight updates. Agents verbally reflect on task feedback and store reflective text in episodic memory to improve later decisions. Reflexion supports varied feedback types and sources, improving performance across decision-making, coding, and reasoning tasks.",
+      "year": 2023,
+      "_parsed": true,
+      "_sections": [
+        "Introduction",
+        "Related Work",
+        "Method",
+        "Experiments",
+        "Results",
+        "Ablation Studies",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "arxiv:2401.15884",
+      "title": "Corrective Retrieval Augmented Generation",
+      "authors": "Shi-Qi Yan, Jia-Chen Gu, Yun Zhu et al.",
+      "abstract": "LLMs can hallucinate because parametric knowledge is insufficient. RAG complements LLMs but relies on retrieved document relevance. We propose Corrective Retrieval Augmented Generation (CRAG) to improve robustness. A lightweight retrieval evaluator assesses retrieved document quality and triggers retrieval actions; web searches augment limited corpora, and a decompose-then-recompose algorithm filters irrelevant information. CRAG is plug-and-play and improves RAG-based approaches on four datasets.",
+      "year": null,
+      "_parsed": true,
+      "_sections": [
+        "Introduction",
+        "Related Work",
+        "Method",
+        "Experiments",
+        "Conclusion"
+      ]
+    },
+    {
+      "id": "arxiv:2305.04091",
+      "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "authors": "Lei Wang, Wanyu Xu, Yihuai Lan et al.",
+      "abstract": "Large language models (LLMs) have recently been shown to deliver impressive performance in various NLP tasks. To tackle multi-step reasoning tasks, few-shot chain-of-thought (CoT) prompting includes a few manually crafted step-by-step reasoning demonstrations which enable LLMs to explicitly generate reasoning steps and improve their reasoning task accuracy. To eliminate the manual effort, Zero-shot-CoT concatenates the target problem statement with \"Let's think step by step\" as an input prompt to LLMs. Despite the success of Zero-shot-CoT, it still suffers from three pitfalls: calculation errors, missing-step errors, and semantic misunderstanding errors. To address the missing-step errors, we propose Plan-and-Solve (PS) Prompting. It consists of two components: first, devising a plan to divide the entire task into smaller subtasks, and then carrying out the subtasks according to the plan. To address the calculation errors and improve the quality of generated reasoning steps, we extend PS prompting with more detailed instructions and derive PS+ prompting. We evaluate our proposed prompting strategy on ten datasets across three reasoning problems. The experimental results over GPT-3 show that our proposed zero-shot prompting consistently outperforms Zero-shot-CoT across all datasets by a large margin, is comparable to or exceeds Zero-shot-Program-of-Thought Prompting, and has comparable performance with 8-shot CoT prompting on the math reasoning problem. The code can be found at https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting.",
+      "year": null,
+      "_parsed": true,
+      "_sections": []
+    }
+  ],
+  "paper_memories": [
+    {
+      "contribution": "Proposes virtual context management inspired by hierarchical memory systems in operating systems to overcome LLM context-window limits, enabling extended context use for tasks such as document analysis and multi-session chat.",
+      "methodology": "Introduces MemGPT, a system that intelligently manages different memory tiers to provide extended context within the LLM's limited context window and uses interrupts to manage control flow between itself and the user.",
+      "dataset": "Not specified in paper (abstract reports evaluation on document analysis and multi-session chat domains)",
+      "metric": "Not specified in paper (abstract reports evaluation in document analysis and multi-session chat without scores)",
+      "baseline": "Not specified in paper",
+      "limitation": "The abstract identifies LLM limited context windows as the motivating constraint; specific limitations of MemGPT are not stated in the abstract.",
+      "future_work": "Not specified in paper",
+      "keywords": [
+        "Virtual context management",
+        "LLM operating systems",
+        "Hierarchical memory",
+        "Limited context windows",
+        "Document analysis",
+        "Multi-session chat",
+        "Memory tiers",
+        "Interrupts"
+      ],
+      "paper_id": "arxiv:2310.08560",
+      "paper_title": "MemGPT: Towards LLMs as Operating Systems",
+      "year": null
+    },
+    {
+      "paper_id": "arxiv:2210.03629",
+      "paper_title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "year": null
+    },
+    {
+      "contribution": "Not specified.",
+      "methodology": "Not specified.",
+      "dataset": "Not specified.",
+      "metric": "Not specified.",
+      "baseline": "Not specified.",
+      "limitation": "Not specified.",
+      "future_work": "Not specified.",
+      "keywords": [
+        "Not specified"
+      ],
+      "paper_id": "arxiv:2302.04761",
+      "paper_title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "year": 2023
+    },
+    {
+      "contribution": "Addresses the limitation that language models are confined to token-level, left-to-right decision-making during inference and struggle with tasks requiring exploration, strategic lookahead, or pivotal initial decisions. Introduces Tree of Thoughts (ToT), a framework that generalizes Chain of Thought prompting to enable deliberate problem solving over coherent intermediate text units called thoughts.",
+      "methodology": "ToT lets language models explore multiple reasoning paths over coherent thoughts, self-evaluate choices to decide the next course of action, and look ahead or backtrack when necessary to make global choices.",
+      "dataset": "Game of 24, Creative Writing, Mini Crosswords",
+      "metric": "Game of 24 success rate: 74% with ToT vs 4% with GPT-4 chain-of-thought prompting; other task-specific metrics/scores are not reported in the abstract.",
+      "baseline": "GPT-4 with chain-of-thought prompting",
+      "limitation": "Not specified in paper",
+      "future_work": "Not specified in paper",
+      "keywords": [
+        "Tree of Thoughts",
+        "Large Language Models",
+        "Chain of Thought",
+        "Deliberate Problem Solving",
+        "Reasoning Paths",
+        "Self-Evaluation",
+        "Backtracking",
+        "Game of 24"
+      ],
+      "paper_id": "arxiv:2305.10601",
+      "paper_title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "year": null
+    },
+    {
+      "contribution": "Addresses factual inaccuracies and the limitations of indiscriminate retrieval in RAG by introducing Self-RAG, a framework that adaptively retrieves passages on demand and self-reflects on retrieved passages and its own generations.",
+      "methodology": "Trains a single arbitrary language model to generate special reflection tokens for retrieval, generation, and critique, making the model controllable during inference to tailor behavior to diverse task requirements.",
+      "dataset": "Open-domain QA, reasoning, fact verification, and long-form generation tasks; specific dataset names are not reported in the abstract.",
+      "metric": "No numeric scores are reported in the abstract; the paper claims significant improvements over ChatGPT and retrieval-augmented Llama2-chat on open-domain QA, reasoning, and fact verification, plus gains in factuality and citation accuracy for long-form generation.",
+      "baseline": "ChatGPT, retrieval-augmented Llama2-chat, state-of-the-art LLMs, and retrieval-augmented models.",
+      "limitation": "Not specified in paper.",
+      "future_work": "Not specified in paper.",
+      "keywords": [
+        "Self-RAG",
+        "Retrieval-Augmented Generation",
+        "Self-Reflection",
+        "Reflection Tokens",
+        "Large Language Models",
+        "Factuality",
+        "Adaptive Retrieval",
+        "Controllable Inference"
+      ],
+      "paper_id": "arxiv:2310.11511",
+      "paper_title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "year": null
+    },
+    {
+      "contribution": "Proposes Reflexion, a framework to help large language model agents learn efficiently from trial-and-error without traditional reinforcement learning's extensive samples or expensive fine-tuning. It reinforces language agents through linguistic feedback rather than weight updates.",
+      "methodology": "Agents verbally reflect on task feedback and store reflective text in episodic memory to improve later decisions. Reflexion supports varied feedback types and sources and is evaluated across decision-making, coding, and reasoning tasks.",
+      "dataset": "Not specified in paper",
+      "metric": "Not specified in paper",
+      "baseline": "Not specified in paper",
+      "limitation": "Not specified in paper",
+      "future_work": "Not specified in paper",
+      "keywords": [
+        "Reflexion",
+        "Language Agents",
+        "Verbal Reinforcement Learning",
+        "Linguistic Feedback",
+        "Episodic Memory",
+        "Trial-and-Error Learning",
+        "Decision-Making",
+        "Coding and Reasoning"
+      ],
+      "paper_id": "arxiv:2303.11366",
+      "paper_title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+      "year": 2023
+    },
+    {
+      "contribution": "Addresses LLM hallucination caused by insufficient parametric knowledge and RAG's reliance on retrieved document relevance by proposing Corrective Retrieval Augmented Generation (CRAG) to improve robustness.",
+      "methodology": "A lightweight retrieval evaluator assesses retrieved document quality and triggers retrieval actions; web searches augment limited corpora, and a decompose-then-recompose algorithm filters irrelevant information. CRAG is plug-and-play.",
+      "dataset": "Four datasets (names not specified in the provided abstract)",
+      "metric": "Not specified in paper (no metric scores provided in abstract)",
+      "baseline": "RAG-based approaches (specific baselines not specified in abstract)",
+      "limitation": "Not specified in paper",
+      "future_work": "Not specified in paper",
+      "keywords": [
+        "Corrective Retrieval Augmented Generation",
+        "Retrieval-Augmented Generation",
+        "Hallucination",
+        "Retrieval Evaluator",
+        "Web Search",
+        "Decompose-then-Recompose",
+        "Robustness"
+      ],
+      "paper_id": "arxiv:2401.15884",
+      "paper_title": "Corrective Retrieval Augmented Generation",
+      "year": null
+    },
+    {
+      "contribution": "Addresses pitfalls of Zero-shot-CoT (calculation errors, missing-step errors, and semantic misunderstanding errors) by proposing Plan-and-Solve prompting, which first devises a plan dividing the task into subtasks and then carries them out; PS+ extends this with more detailed instructions to reduce calculation errors and improve reasoning-step quality.",
+      "methodology": "Two-stage zero-shot prompting: first devise a plan to divide the entire task into smaller subtasks, then carry out the subtasks according to the plan; PS+ prompting adds more detailed instructions to improve generated reasoning steps and address calculation errors.",
+      "dataset": "Ten datasets across three reasoning problems; specific dataset names are not specified in the provided abstract.",
+      "metric": "No numerical scores are reported in the abstract. Relative results over GPT-3: consistently outperforms Zero-shot-CoT across all datasets by a large margin, is comparable to or exceeds Zero-shot-Program-of-Thought Prompting, and has comparable performance with 8-shot CoT prompting on the math reasoning problem.",
+      "baseline": "Zero-shot-CoT, Zero-shot-Program-of-Thought Prompting, 8-shot CoT prompting.",
+      "limitation": "No explicit limitations are acknowledged in the abstract. The abstract lists semantic misunderstanding errors as a Zero-shot-CoT pitfall, but only states that PS addresses missing-step errors and PS+ addresses calculation errors/quality; it does not explicitly claim semantic misunderstanding is resolved.",
+      "future_work": "Not specified in paper",
+      "keywords": [
+        "Plan-and-Solve Prompting",
+        "Zero-shot Chain-of-Thought",
+        "Large Language Models",
+        "Multi-step Reasoning",
+        "Prompting",
+        "GPT-3",
+        "Calculation Errors",
+        "Missing-step Errors"
+      ],
+      "paper_id": "arxiv:2305.04091",
+      "paper_title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+      "year": null
+    }
+  ],
+  "topic_clusters": [
+    {
+      "name": "Memory-Augmented LLM Systems",
+      "description": "Systems that use hierarchical or episodic memory to extend LLM context and support iterative, feedback-driven agent behavior.",
+      "paper_ids": [
+        "arxiv:2310.08560",
+        "arxiv:2303.11366"
+      ],
+      "paper_titles": [
+        "MemGPT: Towards LLMs as Operating Systems",
+        "Reflexion: Language Agents with Verbal Reinforcement Learning"
+      ],
+      "color": "#6366f1"
+    },
+    {
+      "name": "Tool-Augmented Language Agents",
+      "description": "Approaches that interleave LLM reasoning with external actions or teach models to call tools and APIs.",
+      "paper_ids": [
+        "arxiv:2210.03629",
+        "arxiv:2302.04761"
+      ],
+      "paper_titles": [
+        "ReAct: Synergizing Reasoning and Acting in Language Models",
+        "Toolformer: Language Models Can Teach Themselves to Use Tools"
+      ],
+      "color": "#ec4899"
+    },
+    {
+      "name": "Retrieval-Augmented Generation and Reliability",
+      "description": "Methods that adaptively retrieve, evaluate, and correct external knowledge to improve factuality and reduce hallucination.",
+      "paper_ids": [
+        "arxiv:2310.11511",
+        "arxiv:2401.15884"
+      ],
+      "paper_titles": [
+        "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+        "Corrective Retrieval Augmented Generation"
+      ],
+      "color": "#f59e0b"
+    },
+    {
+      "name": "Structured Reasoning and Planning",
+      "description": "Prompting and search methods that organize multi-step reasoning through plans, thought trees, self-evaluation, and backtracking.",
+      "paper_ids": [
+        "arxiv:2305.10601",
+        "arxiv:2305.04091"
+      ],
+      "paper_titles": [
+        "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+        "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models"
+      ],
+      "color": "#10b981"
+    }
+  ],
+  "research_gaps": [],
+  "section_drafts": [
+    {
+      "section_title": "Introduction",
+      "content": "The Introduction covers advances in augmenting LLMs with memory and external tools to support persistent, action-oriented agents, alongside retrieval-augmented generation methods that improve factual reliability through self-reflection and correction. It also highlights structured reasoning and planning approaches—such as tree search and plan-and-solve prompting—that enhance deliberate problem solving and zero-shot reasoning.\n\nOK\n\n### Strengths\n\n1. **Extended effective context through intelligent memory/control management.** MemGPT’s tiered memory and interrupt-based control flow let an LLM manage information beyond its fixed context window, enabling longer conversations and richer stateful tasks (**Packer et al., “",
+      "topic_summary": "The Introduction covers advances in augmenting LLMs with memory and external tools to support persistent, action-oriented agents, alongside retrieval-augmented generation methods that improve factual reliability through self-reflection and correction. It also highlights structured reasoning and planning approaches—such as tree search and plan-and-solve prompting—that enhance deliberate problem solving and zero-shot reasoning.",
+      "method_comparison": "",
+      "strengths": "1. **Extended effective context through intelligent memory/control management.** MemGPT’s tiered memory and interrupt-based control flow let an LLM manage information beyond its fixed context window, enabling longer conversations and richer stateful tasks (**Packer et al., “",
+      "limitations": "",
+      "transition": "",
+      "citation_issues": [],
+      "reflection_issues": 0,
+      "status": "draft"
+    },
+    {
+      "section_title": "Related Work",
+      "content": "The related work covers four strands: memory-augmented LLM systems for long-term context and self-improvement (MemGPT, Reflexion); tool-augmented agents that interleave reasoning with external tool use (ReAct, Toolformer); retrieval-augmented generation emphasizing self-critique and corrective retrieval for reliability (Self-RAG, Corrective RAG); and structured reasoning/planning methods that decompose complex tasks (Tree of Thoughts, Plan-and-Solve). Together, these topics inform LLM-agent architectures that combine persistent memory, external tools, reliable retrieval, and deliberate planning.\n\nOK",
+      "topic_summary": "The related work covers four strands: memory-augmented LLM systems for long-term context and self-improvement (MemGPT, Reflexion); tool-augmented agents that interleave reasoning with external tool use (ReAct, Toolformer); retrieval-augmented generation emphasizing self-critique and corrective retrieval for reliability (Self-RAG, Corrective RAG); and structured reasoning/planning methods that decompose complex tasks (Tree of Thoughts, Plan-and-Solve). Together, these topics inform LLM-agent architectures that combine persistent memory, external tools, reliable retrieval, and deliberate planning.",
+      "method_comparison": "",
+      "strengths": "",
+      "limitations": "",
+      "transition": "Having outlined the motivation and scope of this study, we now turn to the existing literature to situate our work within prior research. The following section reviews related studies, highlighting the foundations, methods, and open challenges that inform our approach.",
+      "citation_issues": [],
+      "reflection_issues": 0,
+      "status": "draft"
+    },
+    {
+      "section_title": "Methods and Approaches",
+      "content": "The Methods and Approaches section explores four interconnected research directions: memory-augmented LLM systems for persistent context and self-reflection, tool-augmented agents that combine reasoning with external tool use, retrieval-augmented generation with self-critique and correction for reliability, and structured reasoning/planning methods such as tree search and plan-and-solve prompting. Together, these approaches address how LLM agents remember, act, ground knowledge, and solve complex problems deliberately.\n\nOK",
+      "topic_summary": "The Methods and Approaches section explores four interconnected research directions: memory-augmented LLM systems for persistent context and self-reflection, tool-augmented agents that combine reasoning with external tool use, retrieval-augmented generation with self-critique and correction for reliability, and structured reasoning/planning methods such as tree search and plan-and-solve prompting. Together, these approaches address how LLM agents remember, act, ground knowledge, and solve complex problems deliberately.",
+      "method_comparison": "",
+      "strengths": "",
+      "limitations": "",
+      "transition": "Having reviewed the existing literature and identified the gaps and limitations in current approaches, we now turn to the methods and approaches adopted in this study. The following section describes how these insights inform our methodological design and the specific techniques used to address the research questions.",
+      "citation_issues": [],
+      "reflection_issues": 0,
+      "status": "draft"
+    },
+    {
+      "section_title": "Comparative Analysis",
+      "content": "The Comparative Analysis section covers four key research directions for enhancing LLMs: memory-augmented systems (MemGPT, Reflexion), tool-augmented agents (ReAct, Toolformer), retrieval-augmented generation with reliability/self-reflection (Self-RAG, Corrective RAG), and structured reasoning/planning (Tree of Thoughts, Plan-and-Solve). It compares how these approaches add persistent memory, external tool use, self-correcting retrieval, and deliberate planning to improve LLM capability and robustness.\n\nOK",
+      "topic_summary": "The Comparative Analysis section covers four key research directions for enhancing LLMs: memory-augmented systems (MemGPT, Reflexion), tool-augmented agents (ReAct, Toolformer), retrieval-augmented generation with reliability/self-reflection (Self-RAG, Corrective RAG), and structured reasoning/planning (Tree of Thoughts, Plan-and-Solve). It compares how these approaches add persistent memory, external tool use, self-correcting retrieval, and deliberate planning to improve LLM capability and robustness.",
+      "method_comparison": "",
+      "strengths": "",
+      "limitations": "",
+      "transition": "Having outlined the methods and approaches guiding this study, we now turn to a comparative analysis that applies these frameworks across cases. This comparison will clarify how the selected methods reveal both shared patterns and meaningful differences.",
+      "citation_issues": [],
+      "reflection_issues": 0,
+      "status": "draft"
+    },
+    {
+      "section_title": "Challenges and Future Directions",
+      "content": "The “Challenges and Future Directions” section should focus on integrating persistent memory, external tool use, retrieval with self-critique, and structured planning into unified LLM agent architectures. Key open issues include scalable memory management, robust tool invocation and error correction, trustworthy retrieval-augmented generation, and efficient deliberative reasoning under real-world constraints. Future work should also address evaluation, safety, and coordination across these interacting components.\n\nOK",
+      "topic_summary": "The “Challenges and Future Directions” section should focus on integrating persistent memory, external tool use, retrieval with self-critique, and structured planning into unified LLM agent architectures. Key open issues include scalable memory management, robust tool invocation and error correction, trustworthy retrieval-augmented generation, and efficient deliberative reasoning under real-world constraints. Future work should also address evaluation, safety, and coordination across these interacting components.",
+      "method_comparison": "",
+      "strengths": "",
+      "limitations": "",
+      "transition": "Having compared existing approaches and highlighted their relative strengths and limitations, we now turn to the open issues that remain. The following section examines the key challenges confronting current work and outlines promising directions for future research.",
+      "citation_issues": [],
+      "reflection_issues": 0,
+      "status": "draft"
+    },
+    {
+      "section_title": "Conclusion",
+      "content": "The Conclusion should synthesize research on integrated LLM agent architectures that combine memory, tool use, retrieval, and structured planning. It should emphasize reliability through self-reflection, critique, and corrective retrieval, and point toward orchestrating these capabilities into autonomous, general-purpose language-agent systems.\n\nOK",
+      "topic_summary": "The Conclusion should synthesize research on integrated LLM agent architectures that combine memory, tool use, retrieval, and structured planning. It should emphasize reliability through self-reflection, critique, and corrective retrieval, and point toward orchestrating these capabilities into autonomous, general-purpose language-agent systems.",
+      "method_comparison": "",
+      "strengths": "",
+      "limitations": "",
+      "transition": "Having outlined the key challenges and promising future directions, we can now consider their broader implications. The following conclusion synthesizes these insights and reflects on what they mean for the field as a whole.",
+      "citation_issues": [],
+      "reflection_issues": 0,
+      "status": "draft"
+    }
+  ],
+  "current_step": "assemble_review_done",
+  "errors": [],
+  "ckpt_id": null,
+  "metadata": {
+    "workspace_name": "LLM Agent Reasoning, Tool Use and Retrieval",
+    "language": "English"
+  },
+  "evolution_graph": {
+    "nodes": [],
+    "edges": [],
+    "timeline": ""
+  },
+  "reflection_log": [],
+  "conflict_reports": [],
+  "final_review": "# LLM Agent Reasoning, Tool Use and Retrieval\n\n## 1. Introduction\n\nRecent research on large language model (LLM) agents has increasingly focused on augmenting LLMs with memory and external tools so that they can operate as persistent, action-oriented systems. In parallel, retrieval-augmented generation (RAG) methods have been developed to improve factual reliability through self-reflection and correction. A further strand of work addresses structured reasoning and planning—such as tree search and plan-and-solve prompting—to enhance deliberate problem solving and zero-shot reasoning. This review organizes these developments into four interrelated clusters: memory-augmented LLM systems, tool-augmented language agents, retrieval-augmented generation and reliability, and structured reasoning and planning. These clusters are treated as complementary components of LLM-agent architectures rather than as isolated techniques. The following section reviews the related work that establishes this conceptual basis.\n\n## 2. Related Work\n\nThe related literature covers four main strands. First, memory-augmented LLM systems target long-term context and self-improvement, represented by **MemGPT: Towards LLMs as Operating Systems** and **Reflexion: Language Agents with Verbal Reinforcement Learning**. Second, tool-augmented agents interleave reasoning with external tool use, as illustrated by **ReAct: Synergizing Reasoning and Acting in Language Models** and **Toolformer: Language Models Can Teach Themselves to Use Tools**. Third, retrieval-augmented generation emphasizes self-critique and corrective retrieval for reliability, including **Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection** and **Corrective Retrieval Augmented Generation**. Fourth, structured reasoning and planning methods decompose complex tasks, represented by **Tree of Thoughts: Deliberate Problem Solving with Large Language Models** and **Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models**. Together, these topics inform LLM-agent architectures that combine persistent memory, external tools, reliable retrieval, and deliberate planning. The next section examines the methods and approaches associated with each strand.\n\n## 3. Methods and Approaches\n\nThe methods and approaches reviewed here explore four interconnected research directions: memory-augmented LLM systems for persistent context and self-reflection, tool-augmented agents that combine reasoning with external tool use, retrieval-augmented generation with self-critique and correction for reliability, and structured reasoning and planning methods such as tree search and plan-and-solve prompting. Together, these approaches address how LLM agents remember, act, ground knowledge, and solve complex problems deliberately.\n\n### 3.1 Memory-Augmented LLM Systems\n\nMemory-augmented systems aim to provide LLM agents with persistent context and mechanisms for self-reflection. **MemGPT** is notable for its tiered memory and interrupt-based control flow, which allow an LLM to manage information beyond its fixed context window, enabling longer conversations and richer stateful tasks (Packer et al., MemGPT). **Reflexion** contributes to this direction through verbal reinforcement learning, supporting self-improvement in language agents. These approaches address the problem of persistence: how an LLM agent can retain and manage information across interactions rather than being limited to a single context window.\n\n### 3.2 Tool-Augmented Language Agents\n\nTool-augmented language agents combine reasoning with external tool use. **ReAct** proposes synergizing reasoning and acting, allowing an agent to interleave reasoning steps with actions in external environments. **Toolformer** investigates how language models can teach themselves to use tools. In both cases, the central contribution is external action: the agent is not limited to generating text but can invoke tools to extend its capabilities. This strand is closely related to the memory and retrieval strands because tool use often depends on persistent state and reliable knowledge grounding.\n\n### 3.3 Retrieval-Augmented Generation and Reliability\n\nRetrieval-augmented generation methods focus on improving factual reliability through retrieval, self-critique, and correction. **Self-RAG** learns to retrieve, generate, and critique through self-reflection. **Corrective Retrieval Augmented Generation** emphasizes corrective retrieval as a mechanism for improving reliability. These approaches address how LLM agents ground their outputs in external knowledge and how they can self-correct when retrieval or generation is insufficient. They therefore complement memory-augmented systems, which preserve context, and tool-augmented agents, which act on external resources.\n\n### 3.4 Structured Reasoning and Planning\n\nStructured reasoning and planning methods decompose complex tasks into more manageable reasoning steps. **Tree of Thoughts** frames deliberate problem solving as tree search, allowing exploration of alternative reasoning paths. **Plan-and-Solve Prompting** improves zero-shot chain-of-thought reasoning by explicitly planning before solving. These methods enhance deliberate problem solving and zero-shot reasoning by imposing structure on the reasoning process. They are relevant to LLM agents because they provide mechanisms for decomposing and coordinating complex tasks, which can be combined with memory, tools, and retrieval.\n\n### 3.5 Method Evolution\n\nThe supplied synthesis does not provide a formal method-evolution graph, node-edge timeline, or chronological lineage. Consequently, this review describes conceptual evolution rather than a strict historical sequence. The four clusters can be understood as complementary augmentations of LLM capability: memory supports persistence, tools support external action, retrieval supports grounding and reliability, and structured planning supports deliberation. The trajectory emphasized across the drafts is toward integrating these capabilities into unified LLM-agent architectures. This integrative view is developed further in the comparative analysis and challenges sections.\n\n## 4. Comparative Analysis\n\nThe comparative analysis considers how the four research directions add persistent memory, external tool use, self-correcting retrieval, and deliberate planning to improve LLM capability and robustness. Table 1 summarizes the clusters and their roles.\n\n| Cluster | Representative papers | Primary augmentation | Role in LLM-agent architecture |\n|---|---|---|---|\n| Memory-Augmented LLM Systems | MemGPT, Reflexion | Persistent memory and self-reflection | Enables long-term context, stateful tasks, and self-improvement |\n| Tool-Augmented Language Agents | ReAct, Toolformer | External tool use and action | Interleaves reasoning with tool invocation and acting |\n| Retrieval-Augmented Generation and Reliability | Self-RAG, Corrective RAG | Retrieval with self-critique and correction | Grounds knowledge and improves factual reliability |\n| Structured Reasoning and Planning | Tree of Thoughts, Plan-and-Solve | Deliberate reasoning and task decomposition | Supports complex problem solving and zero-shot reasoning |\n\nMemory-augmented systems primarily address persistence and self-reflection. Tool-augmented agents primarily address external action and the interleaving of reasoning with tool use. Retrieval-augmented generation primarily addresses reliability and grounding through self-critique and corrective retrieval. Structured reasoning and planning primarily addresses deliberation and task decomposition. The approaches are therefore complementary: memory helps an agent maintain state, tools help it act, retrieval helps it ground knowledge, and planning helps it solve complex problems deliberately. The reviewed synthesis reports no direct conflicts between findings; the clusters are presented as mutually informing components of LLM-agent architectures. Formal research gaps were not enumerated in the supplied synthesis, but the challenges discussed in the next section identify open issues that require further work.\n\n## 5. Challenges and Future Directions\n\nThe main challenge is integrating persistent memory, external tool use, retrieval with self-critique, and structured planning into unified LLM-agent architectures. Key open issues include scalable memory management, robust tool invocation and error correction, trustworthy retrieval-augmented generation, and efficient deliberative reasoning under real-world constraints. These issues are not isolated: memory management affects how much context an agent can retain, tool invocation affects how reliably an agent can act, retrieval affects how well an agent grounds its knowledge, and planning affects how efficiently an agent can deliberate.\n\n### 5.1 Research Gaps\n\nThe supplied synthesis did not identify formal research gaps. Nevertheless, the open issues above can be treated as candidate areas for future investigation. Scalable memory management remains an open problem for persistent agents. Robust tool invocation and error correction are necessary for reliable action. Trustworthy retrieval-augmented generation is required for factual reliability. Efficient deliberative reasoning under real-world constraints is needed for practical planning. In addition, future work should address evaluation, safety, and coordination across these interacting components.\n\n### 5.2 Conflicts and Open Questions\n\nNo direct conflicts between papers were identified in the provided synthesis. The reviewed material presents memory, tool use, retrieval, and planning as complementary directions rather than as competing accounts. Because the synthesis is high-level and does not report empirical disagreements, this review does not infer unresolved conflicts between specific findings. Instead, the main open questions concern how the four components can be coordinated, evaluated, and made safe in integrated LLM-agent systems.\n\n## 6. Conclusion\n\nThis review has synthesized research on integrated LLM-agent architectures that combine memory, tool use, retrieval, and structured planning. Memory-augmented systems support persistent context and self-reflection; tool-augmented agents enable external action; retrieval-augmented generation improves factual reliability through self-critique and corrective retrieval; and structured reasoning and planning methods support deliberate problem solving. Across these strands, reliability is strengthened through self-reflection, critique, and corrective retrieval. The central direction for future work is to orchestrate these capabilities into autonomous, general-purpose language-agent systems while addressing scalable memory management, robust tool invocation, trustworthy retrieval, efficient deliberation, evaluation, safety, and coordination across interacting components."
+}
